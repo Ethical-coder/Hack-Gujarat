@@ -4,7 +4,7 @@ const { response } = require("express");
 app = express()
 
 app.get("/", function(req, res){
-    res.send("<h1>Hello World!</h1>");
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(3000, function(){
