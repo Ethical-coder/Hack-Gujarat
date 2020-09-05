@@ -1,17 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/views/index.html");
 });
 
 
 app.get("/login", function(req, res){
-    res.sendFile(__dirname + "/public/login.html");
+    res.sendFile(__dirname + "/views/login.html");
 });
 
 
@@ -24,7 +26,7 @@ app.post("/login", function(req, res){
 });
 
 app.get("/signup", function(req, res){
-  res.sendFile(__dirname + "/public/signup.html")
+  res.sendFile(__dirname + "/views/signup.html")
 });
 
 
