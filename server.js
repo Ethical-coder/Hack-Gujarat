@@ -9,11 +9,11 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/public/index.html");
 });
 
-<<<<<<< HEAD
+
 app.get("/login", function(req, res){
     res.sendFile(__dirname + "/public/login.html");
 });
-=======
+
 app.get("/signup", function(req, res){
   res.sendFile(__dirname + "/public/signup.html")
 });
@@ -31,7 +31,7 @@ app.post("/signup", function(req, res){
   res.redirect("/");
 })
 
->>>>>>> 7f25d1b0a8591ca0edcb395e69660f59fcb9960f
+
 app.listen(3000, function(){
     console.log("Server Started at port 3000.");
 })
