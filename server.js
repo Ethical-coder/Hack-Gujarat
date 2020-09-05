@@ -14,9 +14,20 @@ app.get("/login", function(req, res){
     res.sendFile(__dirname + "/public/login.html");
 });
 
+
+app.post("/login", function(req, res){
+  var login_data = {
+    userName : req.body.usr,
+    password : req.body.pwd,
+  };
+  res.redirect("/");
+});
+
 app.get("/signup", function(req, res){
   res.sendFile(__dirname + "/public/signup.html")
 });
+
+
 
 app.post("/signup", function(req, res){
   var userData = {
